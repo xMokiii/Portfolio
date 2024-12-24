@@ -1,29 +1,39 @@
 /* ScreenZoom.module.css */
 
 .container {
-    height: 100vh; /* Hauteur suffisante pour le scroll */
-    background-color: #000; /* Fond noir pour une transition fluide */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  
-  .screen {
-    width: 300px;
-    height: 200px;
-    background-color: #111; /* Fond de l'écran éteint */
-    border: 5px solid #333; /* Bordure de l'écran */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-origin: center; /* Zoom centré sur l'écran */
-    transform: scale(1); /* Taille initiale */
-  }
-  
-  .innerScreen {
-    color: #fff;
-    font-size: 1rem;
-    text-align: center;
-  }
-  
+  height: 100vh; /* Hauteur suffisante pour le scroll */
+  position: relative;
+  background-color: #000; /* Fond noir */
+  overflow: hidden; /* Empêche les débordements */
+  --progress1: 0; /* Variable CSS pour l'arrêt */
+  --progress2: 0; /* Variable CSS pour le zoom */
+}
+
+.title {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  opacity: calc(1 - var(--progress1)); /* Disparition du titre */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 200px;
+  transform: translate(-50%, -50%) scale(calc(1 + var(--progress2) * 7));
+  transform-origin: center; /* Origine du zoom */
+  opacity: calc(1 - var(--progress2)); /* Disparition progressive */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

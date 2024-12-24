@@ -3,7 +3,7 @@ import Intro from './components/Intro';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Screen1 from './components/Screen1';
+import Screen1 from './components/ScreenZoom';
 
 const App: React.FC = () => {
   useSmoothScroll();
@@ -14,8 +14,9 @@ const App: React.FC = () => {
       <Home />
       <Skills />
       <Projects />
-      <Intro />
       <Screen1 />
+      <Intro />
+      <Intro />
 
     </div>
   );
