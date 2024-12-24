@@ -1,0 +1,21 @@
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
