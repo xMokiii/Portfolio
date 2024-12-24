@@ -1,0 +1,29 @@
+/* ScreenZoom.module.css */
+
+.container {
+    height: 100vh; /* Hauteur suffisante pour le scroll */
+    background-color: #000; /* Fond noir pour une transition fluide */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .screen {
+    width: 300px;
+    height: 200px;
+    background-color: #111; /* Fond de l'écran éteint */
+    border: 5px solid #333; /* Bordure de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center; /* Zoom centré sur l'écran */
+    transform: scale(1); /* Taille initiale */
+  }
+  
+  .innerScreen {
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
