@@ -1,0 +1,18 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10px;
+  background: #ccc;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.progressInnerBar {
+  height: 100%;
+  width: 100vw;
+  background: #00a1ff;
+  transform: translateX(-100vw);
+  transition: transform 0.2s ease-out;
+}

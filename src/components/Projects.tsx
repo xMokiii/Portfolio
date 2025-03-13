@@ -35,8 +35,6 @@ const Projects: React.FC = () => {
         <div className={styles.project}>Project 1</div>
         <div className={styles.project}>Project 2</div>
         <div className={styles.project}>Project 3</div>
-        <div className={styles.project}>Project 4</div>
-        <div className={styles.project}>Project 5</div>
       </div>
     </section>
   );
