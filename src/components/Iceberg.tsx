@@ -1,30 +1,28 @@
-import { useRef, useEffect, useState } from "react";
+import { forwardRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const Iceberg = () => {
-  const icebergRef = useRef<THREE.Group>(null!);
-  const { scene } = useGLTF("/Iceberg.glb"); // Charge le modèle
-  const [scrollY, setScrollY] = useState(0);
 
-  // Met à jour la position Y en fonction du scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY * 0.003); // Ajuste la vitesse du déplacement (plus lent)
-    };
+// Props du composant Iceberg
+interface IcebergProps {
+  scaleFactor?: number;
+  positionX?: number;
+  positionY?: number;
+}
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const Iceberg = forwardRef<THREE.Object3D, IcebergProps>(
+  ({ scaleFactor = 1, positionX = 0, positionY = 0 }, ref) => {
+    const { scene } = useGLTF("/Iceberg.glb");
 
-  useFrame(() => {
-    if (icebergRef.current) {
-      icebergRef.current.position.y = -4.5 +  scrollY; // Inverse le sens de défilement pour descendre
-    }
-  });
-
-  return <primitive ref={icebergRef} object={scene} position={[1, 0, 0]} scale={6} />;
-};
+    return (
+      <primitive
+        ref={ref} 
+        object={scene}
+        position={[positionX, positionY, 0]}
+        scale={[scaleFactor, scaleFactor, scaleFactor]}
+      />
+    );
+  }
+);
 
 export default Iceberg;

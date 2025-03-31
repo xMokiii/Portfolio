@@ -17,14 +17,6 @@ body {
   overflow: hidden;
 }
 
-.canvas-container {
-  position: fixed;  /* Reste en arrière-plan même en scrollant */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1; /* Met le canvas derrière tout */
-}
 
 .content-container {
   position: relative;
@@ -32,20 +24,11 @@ body {
   padding-top: 100vh; /* Ajoute un espace en haut pour le canvas */
 }
 
-.bubble {
-  position: absolute;
-  bottom: -100px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: rise 10s infinite;
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-200vh);
-  }
+.canvas-container {
+  position: fixed;  /* Reste en arrière-plan même en scrollant */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Met le canvas derrière tout */
 }

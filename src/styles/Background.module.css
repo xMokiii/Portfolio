@@ -1,0 +1,30 @@
+.canvas-container {
+  position: fixed;  /* Reste en arrière-plan même en scrollant */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Met le canvas derrière tout */
+}
+
+body {
+  background: linear-gradient(to bottom, #0077be, #001f3f); 
+}
+
+
+.canvas-container {
+  position: fixed;  /* Reste en arrière-plan même en scrollant */
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Met le canvas derrière tout */
+}
+
+
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200vh);
+  }
+}
